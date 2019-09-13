@@ -35,6 +35,12 @@ curl -d "{\"query\": \"LET doc = DOCUMENT('https://bit.ly/2kiKTWI', true) WAIT_E
 
 ## Installation
 
+### Docker Hub
+
+```
+docker run --rm -p 8080:8080 pierrebrisorgueil/ferretapi
+```
+
 ### Build
 ```
 git clone && cd ferretApi
