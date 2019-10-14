@@ -30,7 +30,7 @@ This container makes it possible to deploy an instance including an API and chro
 ## Show me some code
 
 ```
-curl -d "{\"query\": \"LET doc = DOCUMENT('https://bit.ly/2kiKTWI', true) WAIT_ELEMENT(doc, '#search', 5000) FOR el IN ELEMENTS(doc, '.ellip') RETURN { title: TRIM(el.innerText) }\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/
+curl -d "{\"query\": \"LET doc = DOCUMENT('https://weareopensource.me', true) LET btn = ELEMENT(doc, '.nav-hobbies') CLICK(btn) WAIT_NAVIGATION(doc) FOR el IN ELEMENTS(doc, '.post-card-title') RETURN TRIM(el.innerText)\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/
 ```
 
 ## Installation
@@ -43,9 +43,9 @@ docker run --rm -p 8080:8080 pierrebrisorgueil/ferretapi
 
 ### Build
 ```
-git clone && cd ferretApi
-docker build -t ferretApi .
-docker run --rm -p 8080:8080 ferretApi
+git clone && cd ferretapi
+docker build -t ferretapi .
+docker run --rm -p 8080:8080 ferretapi
 ```
 
 ## Dev
