@@ -43,7 +43,7 @@ docker run --rm -p 8080:8080 pierrebrisorgueil/ferretapi
 
 ### Build
 ```
-git clone && cd ferretapi
+git clone && cd ferretApi
 docker build -t ferretapi .
 docker run --rm -p 8080:8080 ferretapi
 ```
