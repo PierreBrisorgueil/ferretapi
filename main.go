@@ -33,6 +33,7 @@ type errResult struct {
 	Type string `json:"type"`
 	Message string `json:"message"`
 	Description string `json:"description"`
+	Ip string `json:"ip"`
 }
 
 type successResult struct {
@@ -78,6 +79,7 @@ func reqHandler(w http.ResponseWriter, r *http.Request) {
 					Type: "error",
 					Message: "Unprocessable Entity",
 					Description:  string(err.Error()),
+					Ip: ip,
 				}
 				j, _ := json.Marshal(r)
 				w.WriteHeader(422)
