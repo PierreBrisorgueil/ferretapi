@@ -7,7 +7,7 @@
 		<img alt="Discord Chat" src="https://img.shields.io/discord/501533080880676864.svg">
 	</a>
 	<a href="https://github.com/PierreBrisorgueil/ferretApi/releases">
-		<img alt="Ferret release" src="https://img.shields.io/github/release/PierreBrisorgueil/ferretApi.svg">
+		<img alt="Ferret Api release" src="https://img.shields.io/github/release/PierreBrisorgueil/ferretApi.svg">
 	</a>
 	<a href="http://opensource.org/licenses/MIT">
 		<img alt="MIT License" src="http://img.shields.io/badge/license-MIT-brightgreen.svg">
