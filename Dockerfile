@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # args
-ARG FERRET_TAG=master
+ARG FERRET_TAG=v0.11.1
 
 COPY . .
 RUN go get github.com/gobs/args
