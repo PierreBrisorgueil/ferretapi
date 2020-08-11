@@ -1,7 +1,10 @@
+# build step
 FROM golang:latest
 
-
-ARG DEBIAN_FRONTEND=noninteractive
+# System setup
+ENV DEBIAN_FRONTEND=noninteractive \
+    TERM=xterm \
+    TIMEZONE=UTC
 
 # Install deps + add Chrome Stable + purge all the things
 RUN apt-get update && apt-get install -y \
@@ -25,12 +28,18 @@ RUN apt-get update && apt-get install -y \
 	&& apt-get purge --auto-remove -y curl gnupg \
 	&& rm -rf /var/lib/apt/lists/*
 
-# Go
+# Create app directory
 WORKDIR /app
+
+# args
+ARG FERRET_TAG='@latest'
+
 COPY . .
 RUN go get github.com/gobs/args
 RUN go get github.com/raff/godet
-RUN go get github.com/MontFerret/ferret
+RUN export GO111MODULE=on
+RUN go mod init ferret
+RUN go mod download github.com/MontFerret/ferret${FERRET_TAG}
 RUN go build -o main .
 
 EXPOSE 8080
