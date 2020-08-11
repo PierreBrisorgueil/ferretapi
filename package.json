@@ -3,11 +3,11 @@
   "description": "Swift - Boilerplate Front : RxSwift, JWT (WIP)",
   "version": "0.1.1",
   "private": false,
-  "author": "https://github.com/weareopensource/Swift/graphs/contributors",
+  "author": "https://github.com/PierreBrisorgueil",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/weareopensource/rancher-catalog.git"
+    "url": "https://github.com/PierreBrisorgueil/ferretapi.git"
   },
   "engines": {
     "node": ">=9.11.2",
@@ -42,7 +42,7 @@
       }
     ],
     "ci": false,
-    "repositoryUrl": "https://github.com/weareopensource/rancher-catalog.git",
+    "repositoryUrl": "https://github.com/PierreBrisorgueil/ferretapi.git",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
