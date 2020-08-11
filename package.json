@@ -1,0 +1,70 @@
+{
+  "name": "@weareopensource/rancher-catalog",
+  "description": "Swift - Boilerplate Front : RxSwift, JWT (WIP)",
+  "version": "0.1.1",
+  "private": false,
+  "author": "https://github.com/weareopensource/Swift/graphs/contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weareopensource/rancher-catalog.git"
+  },
+  "engines": {
+    "node": ">=9.11.2",
+    "npm": ">=6.4.1",
+    "yarn": ">=1.13.0"
+  },
+  "scripts": {
+    "commit": "npx git-cz",
+    "release": "standard-version",
+    "release:auto": "npx semantic-release"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@weareopensource/conventional-changelog": "^1.7.0",
+    "commitizen": "^4.1.2",
+    "husky": "^4.2.5",
+    "semantic-release": "^17.1.1",
+    "standard-version": "^8.0.2"
+  },
+  "release": {
+    "branches": [
+      {
+        "name": "master"
+      }
+    ],
+    "ci": false,
+    "repositoryUrl": "https://github.com/weareopensource/rancher-catalog.git",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/github",
+        {
+          "successComment": false,
+          "failComment": false
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@weareopensource/conventional-changelog"
+    }
+  }
+}

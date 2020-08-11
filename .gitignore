@@ -1,0 +1,73 @@
+# OS
+# ===========
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Node and related ecosystem
+# ==========================
+node_modules/
+
+# Swift and related ecosystem
+# ==========================
+.coveralls.yml
+reports/
+coverage
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+timeline.xctimeline
+playground.xcworkspace
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+iOSInjectionProject/
+
+# waos Swift app and assets
+# ======================
+
+
+# Build
+# ============================
+build/
+DerivedData/
+Carthage/Build
+Carthage/Checkouts
+
+# Ignoring waos Node's gh-pages branch for documenation
+_site/
+
+# General
+# =======
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.tmp
+*.bak
+*.swp
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+logs/
+
+# Various editor
+# ==============
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
