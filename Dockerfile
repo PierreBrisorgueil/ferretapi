@@ -4,7 +4,8 @@ FROM golang:latest
 # System setup
 ENV DEBIAN_FRONTEND=noninteractive \
     TERM=xterm \
-    TIMEZONE=UTC
+    TIMEZONE=UTC \
+	GO111MODULE=on
 
 # Install deps + add Chrome Stable + purge all the things
 RUN apt-get update && apt-get install -y \
@@ -32,14 +33,14 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # args
-ARG FERRET_TAG='@latest'
+ARG FERRET_TAG=latest
 
 COPY . .
 RUN go get github.com/gobs/args
 RUN go get github.com/raff/godet
 RUN export GO111MODULE=on
 RUN go mod init ferret
-RUN go mod download github.com/MontFerret/ferret${FERRET_TAG}
+RUN go get github.com/MontFerret/ferret@${FERRET_TAG}
 RUN go build -o main .
 
 EXPOSE 8080
