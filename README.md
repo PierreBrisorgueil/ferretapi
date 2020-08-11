@@ -30,7 +30,7 @@ This container makes it possible to deploy an instance including an API and chro
 ## Show me some code
 
 ```
-curl -d "{\"query\": \"LET doc = DOCUMENT('https://weareopensource.me', true) LET btn = ELEMENT(doc, '.nav-hobbies') CLICK(btn) WAIT_NAVIGATION(doc) FOR el IN ELEMENTS(doc, '.post-card-title') RETURN TRIM(el.innerText)\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/
+curl -d "{\"text\": \"LET doc = DOCUMENT('https://weareopensource.me', true) LET btn = ELEMENT(doc, '.nav-hobbies') CLICK(btn) WAIT_NAVIGATION(doc) FOR el IN ELEMENTS(doc, '.post-card-title') RETURN TRIM(el.innerText)\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/
 ```
 
 ## Installation

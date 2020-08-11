@@ -24,8 +24,8 @@ import (
 
 var remote *godet.RemoteDebugger
 
-type query struct {
-	Query string `json:"query"`
+type text struct {
+	Query string `json:"text"`
 }
 
 type errResult struct {
@@ -63,7 +63,7 @@ func reqHandler(w http.ResponseWriter, r *http.Request) {
 		case "POST":
 			// 1. Decode json body
 			d := json.NewDecoder(r.Body)
-			p := &query{}
+			p := &text{}
 			err := d.Decode(p)
 
 			// 2. Get external ip for log
@@ -96,7 +96,7 @@ func reqHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		default:
 			w.WriteHeader(http.StatusMethodNotAllowed)
-			fmt.Fprintf(w, "I can't do that, please send me a Post request { query : 'your ferret things' } ")
+			fmt.Fprintf(w, "I can't do that, please send me a Post request { text : 'your ferret things' } ")
 	}
 }
 
@@ -165,9 +165,9 @@ func command(input string, kind string) error {
  * @param {String} term command for launch fql
  * @return {String} result
  */
-func ferret(query string) ([]byte, error) {
+func ferret(text string) ([]byte, error) {
 	comp := compiler.New()
-	program, err := comp.Compile(query)
+	program, err := comp.Compile(text)
 	if err != nil {
 		return nil, err
 	}
